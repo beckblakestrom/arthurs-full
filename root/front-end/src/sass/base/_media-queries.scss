@@ -1,0 +1,56 @@
+@mixin media($breakpoint) {
+	// super slim mobile
+	@if $breakpoint == mobile-slim {
+		@media screen and (max-width: 300px) and (orientation: portrait) {
+			@content;
+		}
+		// super slim mobile landscape
+		@media screen and (max-height: 300px) and (orientation: landscape) {
+			@content;
+		}
+	}
+
+	// base mobile
+	// should take out if mobile first?
+	@if $breakpoint == mobile {
+		@media screen and (max-width: 600px) and (orientation: portrait) {
+			@content;
+		}
+	}
+	// mobile short
+	@if $breakpoint == phone-short {
+		@media screen and (max-width: 600px) and (max-height: 700px) and (orientation: portrait) {
+			@content;
+		}
+	}
+	// phone landscape
+	@if $breakpoint == phone-landscape {
+		@media screen and (max-height: 600px) and (orientation: landscape) {
+			@content;
+		}
+	}
+
+	//tablet
+	@if $breakpoint == tablet {
+		@media screen and (min-width: 600px) and (orientation: portrait) {
+			@content;
+		}
+		// tablet landscape
+		@media screen and (min-height: 600px) and (orientation: landscape) {
+			@content;
+		}
+	}
+	//desktop
+	@if $breakpoint == desktop {
+		@media screen and (min-width: 1024px) and (orientation: landscape) {
+			@content;
+		}
+	}
+
+	//ultrawide
+	@if $breakpoint == ultrawide {
+		@media (min-width: 1600px) {
+			@content;
+		}
+	}
+}

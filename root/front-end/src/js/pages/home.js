@@ -47,7 +47,7 @@ export default function Home() {
 
 	return !loggedIn ? (
 		<React.Fragment>
-			<Banner image="/images/banner2.jpg" text="Banking Redefined" />
+			<Banner image="/images/banner.jpg" text="Banking Redefined" />
 		</React.Fragment>
 	) : (
 		<React.Fragment>

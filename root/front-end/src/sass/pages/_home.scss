@@ -1,0 +1,79 @@
+.banner {
+	height: 55vh;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner-image {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: 50% 0%;
+	filter: brightness(0.7);
+}
+
+.banner-text {
+	position: absolute;
+	color: var(--color-text-light);
+	font-size: 8rem;
+	letter-spacing: 1rem;
+	font-family: reross-quadratic, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.products-container {
+	background-color: var(--color-bg-dark);
+	height: 35vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.products-header {
+	position: relative;
+	font-size: 5rem;
+	letter-spacing: 5px;
+	color: var(--color-text-light);
+}
+
+.products-header::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70%;
+	height: 4px;
+	background-color: var(--color-main);
+}
+
+.products {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	color: var(--color-text-light);
+}
+
+.product-item {
+	font-size: 3rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease-out;
+}
+
+.product-item > i {
+	font-size: 3.5rem;
+}
+
+.product-item:hover {
+	cursor: pointer;
+	color: var(--color-main);
+}

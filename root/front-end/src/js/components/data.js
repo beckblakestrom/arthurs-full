@@ -19,6 +19,9 @@ function UserData({ data }) {
 			<h4 className="user-data-item data-email">
 				Email: <span className="user-data-span">{data.email}</span>
 			</h4>
+			<h4 className="user-data-item data-account-type">
+				Account Type: <span className="user-data-span">{data.accountType}</span>
+			</h4>
 			<h4 className="user-data-item data-password">
 				Password: <span className="user-data-span">{data.password}</span>
 			</h4>

@@ -8,20 +8,20 @@ export default function Nav() {
 	return !loggedIn ? (
 		<React.Fragment>
 			<div className="nav">
-				<Link to="/" className="logo">
+				<Link to="/" className="nav__logo">
 					Arthurs
 				</Link>
-				<div className="link-container">
-					<Link className="link personal" to="/alldata/">
+				<div className="nav__link-container">
+					<Link className="nav__link" to="/alldata/">
 						Personal
 					</Link>
-					<Link className="link" to="/balance/">
+					<Link className="nav__link" to="/balance/">
 						Small Business
 					</Link>
-					<Link className="link" to="/deposit/">
+					<Link className="nav__link" to="/deposit/">
 						Corporate
 					</Link>
-					<Link className="link" to="/about/">
+					<Link className="nav__link" to="/about/">
 						About
 					</Link>
 				</div>
@@ -42,7 +42,7 @@ export default function Nav() {
 					<DataDisplay />
 				</div>
 			</div>
-			<div id="login-dropdown" className="secondary-nav">
+			<div id="login-dropdown" className="nav__secondary-nav">
 				<Login />
 				<button
 					id="login-button"
@@ -88,7 +88,7 @@ export default function Nav() {
 					</Link>
 				</div>
 			</div>
-			<div id="login-dropdown" className="secondary-nav">
+			<div id="login-dropdown" className="nav__secondary-nav">
 				<Login />
 				<button
 					className="login-dropdown-tools"

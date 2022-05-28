@@ -21,3 +21,16 @@ $color-yellow: hsl(53, 97%, 66%);
 $color-purple: hsl(256, 72%, 57%);
 $color-green: hsl(158, 96%, 48%);
 $color-baby-blue: hsl(210, 95%, 85%);
+
+:root {
+	--color-main: hsl(165, 95%, 25%);
+	--color-secondary: hsl(210, 45%, 45%);
+	--color-text-dark: hsl(0, 0%, 25%);
+	--color-text-light: hsl(0, 0%, 94%);
+	--color-bg-light: hsl(0, 0%, 96%);
+	--color-bg-dark: hsl(0, 0%, 13%);
+	--color-bg-medium: hsl(0, 0%, 87%);
+	--color-shadow: hsla(0, 0%, 45%, 0.6);
+	--color-glass: hsla(0, 0%, 64%, 0.47);
+	--color-red: hsl(7, 100%, 65%);
+}

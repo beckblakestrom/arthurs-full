@@ -1,0 +1,98 @@
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 10vh;
+	background-color: var(--color-bg-light);
+	box-shadow: 0 1px 1px hsla(0, 0%, 6%, 0.1);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 4rem;
+	z-index: +2;
+
+	&__logo {
+		font-size: 4rem;
+		font-family: futura-pt, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		letter-spacing: 0.5rem;
+		color: var(--color-text-dark);
+		position: relative;
+		white-space: nowrap;
+		transition: all 0.3s ease-out;
+		font-family: mrs-eaves-roman-small-caps, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+
+		&::before {
+			content: "home";
+			position: absolute;
+			opacity: 0;
+			right: 0%;
+			color: var(--color-shadow);
+			transition: all 0.3s ease-out;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: -1%;
+			width: 75%;
+			height: 3px;
+			background-color: hsl(165, 95%, 25%);
+			transition: all 0.3s ease-out;
+		}
+
+		&:hover {
+			color: var(--color-shadow);
+		}
+
+		&:hover::before {
+			opacity: 1;
+			right: -65%;
+		}
+
+		&:hover::after {
+			width: 164%;
+		}
+	}
+
+	&__link-container {
+		display: flex;
+		gap: 4rem;
+	}
+
+	&__link {
+		font-size: 2rem;
+		font-family: futura-pt, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		color: hsl(0, 0%, 20%);
+		transition: all 0.3s ease-out;
+		white-space: nowrap;
+
+		&:hover {
+			color: var(--color-main);
+			cursor: pointer;
+		}
+	}
+
+	&__secondary-nav {
+		position: absolute;
+		z-index: +1;
+		width: 50%;
+		top: -30vh;
+		right: 5%;
+		background-color: var(--color-bg-light);
+		display: flex;
+		gap: 4rem;
+
+		border-bottom-left-radius: 25px;
+
+		transition: all 0.3s ease-out;
+	}
+}

@@ -21,6 +21,7 @@ export default function Spa() {
 				lastName: "Beckstrom",
 				email: "blake@gmail.com",
 				password: "hard",
+				accountType: "personal",
 				balance: 200000,
 				accounts: {
 					checking: {
@@ -106,6 +107,7 @@ export default function Spa() {
 				lastName: "Doe",
 				email: "john@gmail.com",
 				password: "easy",
+				accountType: "Small Business",
 				balance: 200,
 				accounts: {
 					checking: {

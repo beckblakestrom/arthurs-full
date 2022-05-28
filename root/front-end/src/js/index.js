@@ -8,6 +8,9 @@ import {
 } from "./context";
 import Home from "./pages/home";
 import Nav from "./components/nav";
+import CreateAccount from "./components/createaccount";
+import Balance from "./components/balance";
+import Deposit from "./components/deposit";
 
 export default function Spa() {
 	const [loggedIn, setLoggedIn] = useState(false);
@@ -21,128 +24,43 @@ export default function Spa() {
 				lastName: "Beckstrom",
 				email: "blake@gmail.com",
 				password: "hard",
-				accountType: "personal",
-				balance: 200000,
+				type: "personal",
 				accounts: {
 					checking: {
-						title: "Checking",
+						balance: 0,
 						transactions: [
 							{
 								type: "deposit",
-								account: "checking",
 								date: "3/27/2022",
 								amount: 1,
+								transactionId: "blakebeckstrom-checking-001",
 							},
 							{
 								type: "withdraw",
-								account: "checking",
 								date: "3/28/2022",
 								amount: 1,
+								transactionId: "blakebeckstrom-checking-002",
 							},
 						],
-						balance: 50000,
 					},
 					savings: {
-						title: "Savings",
+						balance: 0,
 						transactions: [
 							{
 								type: "deposit",
-								account: "checking",
 								date: "3/27/2022",
 								amount: 1,
+								transactionId: "blakebeckstrom-savings-001",
 							},
 							{
 								type: "withdraw",
-								account: "checking",
 								date: "3/28/2022",
 								amount: 1,
+								transactionId: "blakebeckstrom-savings-002",
 							},
 						],
-						balance: 50000,
-					},
-					credit: {
-						title: "Credit",
-						transactions: [
-							{
-								type: "deposit",
-								account: "checking",
-								date: "3/27/2022",
-								amount: 1,
-							},
-							{
-								type: "withdraw",
-								account: "checking",
-								date: "3/28/2022",
-								amount: 1,
-							},
-						],
-						balance: 50000,
-					},
-					trading: {
-						title: "Trading",
-						transactions: [
-							{
-								type: "deposit",
-								account: "checking",
-								date: "3/27/2022",
-								amount: 1,
-							},
-							{
-								type: "withdraw",
-								account: "checking",
-								date: "3/28/2022",
-								amount: 1,
-							},
-						],
-						balance: 60000,
 					},
 				},
-				transactions: [
-					{ type: "deposit", date: "3/27/2022", amount: 45 },
-					{ type: "withdraw", date: "3/28/2022", amount: 46 },
-				],
-			},
-			{
-				firstName: "John",
-				lastName: "Doe",
-				email: "john@gmail.com",
-				password: "easy",
-				accountType: "Small Business",
-				balance: 200,
-				accounts: {
-					checking: {
-						transactions: [
-							{ type: "deposit", date: "3/27/2022", amount: 1 },
-							{ type: "withdraw", date: "3/28/2022", amount: 2 },
-						],
-						balance: 60,
-					},
-					savings: {
-						transactions: [
-							{ type: "deposit", date: "3/27/2022", amount: 3 },
-							{ type: "withdraw", date: "3/28/2022", amount: 4 },
-						],
-						balance: 50,
-					},
-					credit: {
-						transactions: [
-							{ type: "deposit", date: "3/27/2022", amount: 5 },
-							{ type: "withdraw", date: "3/28/2022", amount: 6 },
-						],
-						balance: 50,
-					},
-					trading: {
-						transactions: [
-							{ type: "deposit", date: "3/27/2022", amount: 7 },
-							{ type: "withdraw", date: "3/28/2022", amount: 8 },
-						],
-						balance: 50,
-					},
-				},
-				transactions: [
-					{ type: "deposit", date: "3/27/2022", amount: 45 },
-					{ type: "withdraw", date: "3/28/2022", amount: 46 },
-				],
 			},
 		],
 	});
@@ -164,6 +82,9 @@ export default function Spa() {
 				<Nav />
 				<Routes>
 					<Route path="/" exact element={<Home />} />
+					<Route path="/balance/" element={<Balance />} />
+					<Route path="/createaccount/" element={<CreateAccount />} />
+					<Route path="/deposit/" element={<Deposit />} />
 				</Routes>
 			</UserContext.Provider>
 		</HashRouter>

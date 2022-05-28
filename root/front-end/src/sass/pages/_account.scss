@@ -1,0 +1,143 @@
+.page-container-center {
+	height: 90vh;
+	background-color: hsl(0, 0%, 90%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.please-login {
+	font-size: 4rem;
+}
+
+.account-container {
+	background-color: var(--color-bg-medium);
+	height: 100%;
+	width: 100%;
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: 60% 40%;
+	grid-template-rows: 15% 15% 40% 20%;
+	grid-template-areas:
+		"account welcome"
+		"menu accounts"
+		"transactions accounts"
+		"transactions balance";
+	place-items: center;
+}
+
+.account-type {
+	grid-area: account;
+}
+
+.account-welcome {
+	grid-area: welcome;
+	font-size: 4rem;
+	align-self: center;
+	justify-self: center;
+}
+
+.account-nav {
+	grid-area: menu;
+	display: flex;
+	gap: 2rem;
+}
+
+.account-accounts {
+	grid-area: accounts;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	gap: 1rem;
+}
+
+.single-account {
+	display: flex;
+	justify-content: space-evenly;
+	width: 70%;
+	background-color: var(--color-bg-dark);
+	border-radius: 10px;
+	padding: 1rem;
+	transition: all 0.3s ease-in-out;
+}
+
+.single-account:hover {
+	cursor: pointer;
+	background-color: var(--color-bg-light);
+}
+
+.single-account:hover .single-account-title {
+	color: var(--color-text-dark);
+}
+
+.single-account-title {
+	color: var(--color-text-light);
+	font-size: 3rem;
+	transition: all 0.3s ease-in-out;
+}
+
+.single-account-balance {
+	color: var(--color-red);
+	font-size: 3rem;
+}
+
+.grid-button {
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-transform: uppercase;
+	color: var(--color-text-dark);
+	font-size: 2.5rem;
+	letter-spacing: 2px;
+	padding: 1rem;
+	border: none;
+	border-radius: 10px;
+	transition: all 0.2s ease-out;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: baseline;
+	gap: 1rem;
+}
+
+.grid-button:hover {
+	cursor: pointer;
+	color: var(--color-secondary);
+}
+
+.account-balance {
+	grid-area: balance;
+	font-size: 4rem;
+}
+
+.account-transaction-container {
+	grid-area: transactions;
+	border: solid var(--color-bg-light) 4px;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.account-transaction-header {
+	font-size: 4rem;
+	background-color: var(--color-bg-light);
+	width: 100%;
+}
+
+.account-transaction {
+	color: var(--color-text-dark);
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	min-height: 8rem;
+	transition: all 0.5s ease-in-out;
+	border-bottom: solid var(--color-bg-light);
+}

@@ -51,7 +51,7 @@ export default function Home() {
 		</React.Fragment>
 	) : (
 		<React.Fragment>
-			<Banner image="/images/banner2.jpg" text={welcome} />
+			<Banner image="/images/banner.jpg" text={welcome} />
 		</React.Fragment>
 	);
 }

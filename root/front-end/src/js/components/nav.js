@@ -67,11 +67,11 @@ export default function Nav() {
 	) : (
 		<React.Fragment>
 			<div className="nav">
-				<Link to="/" className="logo">
+				<Link to="/" className="nav__logo">
 					Arthurs
 				</Link>
-				<div className="link-container">
-					<Link className="link" to="/balance/">
+				<div className="nav__link-container">
+					<Link className="nav__link" to="/balance/">
 						Account
 					</Link>
 					<Link
@@ -83,7 +83,7 @@ export default function Nav() {
 								.classList.remove("drop");
 							document.getElementById("down-arrow").classList.remove("drop");
 						}}
-						className="link">
+						className="nav__link">
 						Logout
 					</Link>
 				</div>

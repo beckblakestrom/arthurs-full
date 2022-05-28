@@ -1,0 +1,198 @@
+.deposit-button {
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-transform: uppercase;
+	color: hsl(0, 0%, 21%);
+	font-size: 2rem;
+	letter-spacing: 2px;
+	padding: 1rem 0;
+	border: none;
+	border-radius: 10px;
+	transition: all 0.2s ease-out;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+}
+
+.button-1 {
+	background-color: var(--color-main);
+}
+
+.button-2 {
+	background-color: hsl(0, 0%, 21%);
+	color: var(--color-main);
+}
+
+.deposit-button:hover {
+	cursor: pointer;
+	filter: brightness(1.2);
+}
+.button-2:hover {
+	filter: brightness(1.4);
+}
+
+.icon {
+	font-size: 2rem;
+	transition: all 0.2s ease-out;
+}
+
+.deposit-button:hover > .icon-1 {
+	color: hsl(0, 0%, 30%);
+}
+
+.deposit-button:hover > .icon-2 {
+	color: hsl(0, 0%, 80%);
+}
+
+.input {
+	border: none;
+	border-radius: 10px;
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	background-color: hsl(0, 0%, 90%);
+	color: hsl(0, 0%, 21%);
+	font-size: 2rem;
+	letter-spacing: 2px;
+	padding: 1rem;
+	width: 25%;
+	color: hsl(0, 0%, 15%);
+	transition: all 0.2s ease-out;
+	position: relative;
+}
+
+.input:hover {
+	filter: brightness(1.1);
+}
+
+.input:focus {
+	outline: none;
+}
+
+.deposit-submit {
+	background-color: hsl(0, 0%, 90%);
+	border: none;
+	cursor: pointer;
+	width: 25%;
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: 2rem;
+	padding: 1rem;
+	color: hsl(0, 0%, 80%);
+	border-radius: 10px;
+	transition: filter 0.2s ease-out, color 0.5s ease-in-out;
+}
+
+.deposit-submit:hover {
+	filter: contrast(125%);
+	color: var(--color-main);
+}
+
+.container {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-areas:
+		"welcome"
+		"select"
+		"current"
+		"input"
+		"total";
+	gap: 1rem;
+	justify-items: center;
+	align-items: center;
+	background-color: var(--color-bg-light);
+	border-radius: 10px;
+	box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+		rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+	padding: 2rem 4rem;
+	position: relative;
+	height: 75%;
+	width: 60%;
+}
+
+.welcome {
+	grid-area: welcome;
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 3.5rem;
+	letter-spacing: 4px;
+	color: hsl(0, 0%, 15%);
+	border-bottom: 3px solid var(--color-main);
+}
+
+.input-container {
+	grid-area: input;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.warning {
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5rem;
+}
+
+.totals {
+	grid-area: total;
+}
+
+#total {
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5rem;
+	letter-spacing: 2px;
+}
+
+.bitcoin {
+	position: absolute;
+	right: 6%;
+	bottom: 2%;
+	font-size: 2.5rem;
+	color: var(--color-main);
+}
+
+.lock {
+	position: absolute;
+	right: 2%;
+	bottom: 2%;
+	font-size: 2.5rem;
+	color: var(--color-main);
+}
+
+.deposit-select-account {
+	display: flex;
+	grid-area: select;
+	gap: 1rem;
+}
+
+.deposit-single-account {
+	display: flex;
+	background-color: var(--color-bg-dark);
+	border-radius: 5px;
+	padding: 1rem;
+	color: var(--color-text-light);
+	transition: all 0.3s ease-in-out;
+}
+
+.deposit-single-account:hover {
+	cursor: pointer;
+	background-color: var(--color-main);
+}
+
+.current-account {
+	grid-area: current;
+	font-size: 3rem;
+}
+
+.confirm {
+	grid-area: confirm;
+}

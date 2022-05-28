@@ -1,0 +1,61 @@
+// unknown
+.page-container {
+	height: 90vh;
+	background-color: hsl(0, 0%, 90%);
+}
+
+.full-page-container {
+	height: 90vh;
+	width: 100%;
+	background-color: var(--color-bg-medium);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.half-page-container {
+	height: 50%;
+	width: 40%;
+	margin: auto;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-success {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	font-size: 3rem;
+}
+
+.login-success-links {
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-success-button {
+	padding: 0.5rem 2rem;
+	background-color: hsl(0, 0%, 80%);
+	border-radius: 5px;
+	transition: all 0.2s ease-out;
+}
+
+.login-success-button:hover {
+	background-color: hsl(27, 79%, 59%);
+}
+
+.select {
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 3rem;
+}

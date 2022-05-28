@@ -3,11 +3,7 @@ import { useContext } from "react";
 import { UserContext } from "../context";
 
 function UserData({ data }) {
-	let balance =
-		data.accounts.checking.balance +
-		data.accounts.savings.balance +
-		data.accounts.credit.balance +
-		data.accounts.trading.balance;
+	let balance = data.accounts.checking.balance + data.accounts.savings.balance;
 	return (
 		<div className="user-data-entry">
 			<h4 className="user-data-item data-first-name">

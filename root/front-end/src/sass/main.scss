@@ -3,6 +3,7 @@
 @import "base/media-queries";
 @import "base/fonts";
 @import "base/resets";
+@import "base/containers";
 
 // component imports
 @import "components/navigation";
@@ -11,3 +12,5 @@
 
 // page imports
 @import "pages/home";
+@import "pages/account";
+@import "pages/deposit";

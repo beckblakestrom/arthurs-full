@@ -40,6 +40,10 @@ export default function Deposit() {
 	} = useContext(UserContext);
 
 	let selectedAccount = currentUserAccount.title;
+let status = `Total Balance: $${currentUser.balance} `;
+	let balance =
+		currentUser.accounts.checking.balance +
+		currentUser.accounts.savings.balance;
 
 	let deposit = 0; // state of this transaction
 	const [totalState, setTotalState] = React.useState(0);
@@ -48,11 +52,8 @@ export default function Deposit() {
 	const [isDeposit, setIsDeposit] = React.useState(true);
 
 	// current balance printout
-	let accountStatus = `${currentUserAccount.title} Account Balance: $${currentUserAccount.balance} `;
-	let status = `Total Balance: $${currentUser.balance} `;
-	let balance =
-		currentUser.accounts.checking.balance +
-		currentUser.accounts.savings.balance;
+	let accountStatus = `${currentUserAccount.title} Account Balance: $${balance} `;
+
 
 	// handles change within input
 	const handleChange = (event) => {

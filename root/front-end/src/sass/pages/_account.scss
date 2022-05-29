@@ -65,15 +65,6 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.single-account:hover {
-	cursor: pointer;
-	background-color: var(--color-bg-light);
-}
-
-.single-account:hover .single-account-title {
-	color: var(--color-text-dark);
-}
-
 .single-account-title {
 	color: var(--color-text-light);
 	font-size: 3rem;

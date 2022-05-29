@@ -42,21 +42,13 @@ export default function Balance() {
 						Hi, {currentUser.firstName}. Here are your account details.
 					</h1>
 					<div className="account-accounts">
-						<div
-							className="single-account"
-							onClick={() => {
-								setCurrentUserAccount(currentUser.accounts.checking);
-							}}>
+						<div className="single-account">
 							<h4 className="single-account-title">Checking Account</h4>
 							<h4 className="single-account-balance">
 								${currentUser.accounts.checking.balance}
 							</h4>
 						</div>
-						<div
-							className="single-account"
-							onClick={() => {
-								setCurrentUserAccount(currentUser.accounts.savings);
-							}}>
+						<div className="single-account">
 							<h4 className="single-account-title">Savings Account</h4>
 							<h4 className="single-account-balance">
 								${currentUser.accounts.savings.balance}

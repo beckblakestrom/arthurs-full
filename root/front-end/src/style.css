@@ -676,9 +676,9 @@ a:hover {
   width: 100%;
   padding: 2rem;
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 75% 25%;
   grid-template-rows: 15% 15% 40% 20%;
-  grid-template-areas: "account welcome" "menu accounts" "transactions accounts" "transactions balance";
+  grid-template-areas: "welcome welcome" "menu accounts" "transactions accounts" "transactions balance";
   place-items: center;
 }
 
@@ -713,8 +713,10 @@ a:hover {
 
 .single-account {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  width: 70%;
+  align-items: center;
+  width: 80%;
   background-color: var(--color-bg-dark);
   border-radius: 10px;
   padding: 1rem;
@@ -757,6 +759,9 @@ a:hover {
 
 .account-balance {
   grid-area: balance;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 4rem;
 }
 
@@ -781,8 +786,8 @@ a:hover {
 .account-transaction {
   color: var(--color-text-dark);
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
   min-height: 8rem;
   transition: all 0.5s ease-in-out;

@@ -11,16 +11,24 @@ export default function Balance() {
 	let savingsTransactions = currentUser.accounts.savings.transactions;
 	let transactions = checkingTransactions.concat(savingsTransactions);
 
-	let sortedTransactions = [];
-	for (let i = 0; i < transactions.length; i++) {
-		for (var j = 0; j < i; j++)
-			if (transactions[i].date < transactions[j].date) {
-				var x = transactions[i];
-				transactions[i] = transactions[j];
-				transactions[j] = x;
-			}
+	function dynamicSort(property) {
+		var sortOrder = 1;
+		if (property[0] === "-") {
+			sortOrder = -1;
+			property = property.substr(1);
+		}
+		return function (a, b) {
+			/* next line works with strings and numbers,
+			 * and you may want to customize it to your needs
+			 */
+			var result =
+				a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
+			return result * sortOrder;
+		};
 	}
-	console.log("sorted transactions:", sortedTransactions);
+
+	let sortedTransactions = transactions.sort(dynamicSort("-timestamp"));
+	console.log(sortedTransactions);
 
 	function Transactions({ data }) {
 		return (
@@ -28,11 +36,19 @@ export default function Balance() {
 				<h4 className="user-data-item data-first-name">
 					Type: <span className="user-data-span">{data.type}</span>
 				</h4>
+
+				<h4 className="user-data-item data-last-name">
+					Amount:<span className="user-data-span">${data.amount}</span>
+				</h4>
+				<h4 className="user-data-item data-last-name">
+					Account:<span className="user-data-span">{data.account}</span>
+				</h4>
 				<h4 className="user-data-item data-first-name">
 					Date: <span className="user-data-span">{data.date}</span>
 				</h4>
-				<h4 className="user-data-item data-last-name">
-					Amount:<span className="user-data-span">${data.amount}</span>
+				<h4 className="user-data-item data-first-name">
+					Transaction ID:{" "}
+					<span className="user-data-span">{data.transactionId}</span>
 				</h4>
 			</div>
 		);
@@ -59,10 +75,11 @@ export default function Balance() {
 							</h4>
 						</div>
 					</div>
-					<h1 className="account-balance">Current Balance: ${balance}</h1>
+					<h1 className="account-balance">Current Balance:
+						<div>${balance}</div></h1>
 					<div className="account-transaction-container">
 						<h1 className="account-transaction-header">Latest Transactions</h1>
-						{transactions.map((transaction, i) => {
+						{sortedTransactions.map((transaction, i) => {
 							return <Transactions data={transaction} key={i}></Transactions>;
 						})}
 					</div>

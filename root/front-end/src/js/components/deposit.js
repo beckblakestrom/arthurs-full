@@ -76,16 +76,14 @@ export default function Deposit() {
 			type: "deposit",
 			date: today,
 			amount: deposit,
-			account: currentAccount,
-			transactionId: Math.floor(Math.random() * 100000000),
+			account: currentAccount.title,
+			transactionId: Math.floor(Math.random() * 1000000),
+			timestamp: +new Date(),
 		};
 
-		// push transaction into users
-		console.log(
-			"trying to push into:",
-			tempUser.accounts.checking.transactions
-		);
+		console.log(tempTransaction.timestamp);
 
+		// push transaction into users
 		if (currentAccount.title === "checking") {
 			tempUser.accounts.checking.transactions.push(tempTransaction);
 			tempUser.accounts.checking.balance = newTotal;

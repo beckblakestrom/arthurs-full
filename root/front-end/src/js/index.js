@@ -11,6 +11,7 @@ import Nav from "./components/nav";
 import CreateAccount from "./components/createaccount";
 import Balance from "./components/balance";
 import Deposit from "./components/deposit";
+import Withdraw from "./components/withdraw";
 
 export default function Spa() {
 	const [loggedIn, setLoggedIn] = useState(false);
@@ -31,17 +32,19 @@ export default function Spa() {
 						transactions: [
 							{
 								type: "deposit",
-								date: "3/27/2022",
+								date: "3/23/2022",
 								amount: 1,
 								account: "checking",
-								transactionId: "blakebeckstrom-checking-001",
+								transactionId: "838904",
+								timestamp: "3",
 							},
 							{
 								type: "withdraw",
-								date: "3/28/2022",
+								date: "3/22/2022",
 								amount: 1,
 								account: "checking",
-								transactionId: "blakebeckstrom-checking-002",
+								transactionId: "456904",
+								timestamp: "2",
 							},
 						],
 					},
@@ -51,17 +54,19 @@ export default function Spa() {
 						transactions: [
 							{
 								type: "deposit",
-								date: "3/27/2022",
+								date: "3/21/2022",
 								amount: 1,
 								account: "savings",
-								transactionId: "blakebeckstrom-savings-001",
+								transactionId: "138404",
+								timestamp: "1",
 							},
 							{
 								type: "withdraw",
-								date: "3/28/2022",
+								date: "3/20/2022",
 								amount: 1,
 								account: "savings",
-								transactionId: "blakebeckstrom-savings-002",
+								transactionId: "638954",
+								timestamp: "0",
 							},
 						],
 					},
@@ -88,6 +93,7 @@ export default function Spa() {
 					<Route path="/balance/" element={<Balance />} />
 					<Route path="/createaccount/" element={<CreateAccount />} />
 					<Route path="/deposit/" element={<Deposit />} />
+					<Route path="/withdraw/" element={<Withdraw />} />
 				</Routes>
 			</UserContext.Provider>
 		</HashRouter>

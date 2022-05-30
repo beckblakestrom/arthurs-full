@@ -41,7 +41,7 @@ export default function Spa() {
 							{
 								type: "withdraw",
 								date: "3/22/2022",
-								amount: 1,
+								amount: -1,
 								account: "checking",
 								transactionId: "456904",
 								timestamp: "2",
@@ -63,7 +63,7 @@ export default function Spa() {
 							{
 								type: "withdraw",
 								date: "3/20/2022",
-								amount: 1,
+								amount: -1,
 								account: "savings",
 								transactionId: "638954",
 								timestamp: "0",

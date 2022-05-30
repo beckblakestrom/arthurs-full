@@ -13,7 +13,6 @@ export default function Login() {
 		setLoggedIn,
 		currentUser,
 		setCurrentUser,
-		currentUserIndex,
 		setCurrentUserIndex,
 		currentUserAccount,
 		setCurrentUserAccount,
@@ -23,7 +22,6 @@ export default function Login() {
 		event.preventDefault();
 		if (!validate(email, "email")) return;
 		if (!validate(password, "password")) return;
-		console.log(email, password);
 
 		for (let i = 0; i < user.users.length; i++) {
 			if (
@@ -32,16 +30,9 @@ export default function Login() {
 			) {
 				let thisUser = user.users[i];
 				setCurrentUserIndex(i);
-				console.log(thisUser);
-				console.log(currentUserIndex);
 				setCurrentUser(thisUser);
 				setLoggedIn(true);
 				Success(thisUser);
-
-				// shallow user account
-				let shallowAccount = user.users[i].accounts.checking;
-				setCurrentUserAccount(shallowAccount);
-				console.log(currentUserAccount);
 
 				return;
 			} else {
@@ -63,7 +54,7 @@ export default function Login() {
 	}
 
 	function Success(thisUser) {
-		console.log(thisUser.firstName);
+		console.log("currentUser:", currentUser);
 
 		clearForm();
 	}

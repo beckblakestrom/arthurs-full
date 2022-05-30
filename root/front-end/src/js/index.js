@@ -16,7 +16,6 @@ export default function Spa() {
 	const [loggedIn, setLoggedIn] = useState(false);
 	const [currentUser, setCurrentUser] = useState("");
 	const [currentUserIndex, setCurrentUserIndex] = useState(0);
-	const [currentUserAccount, setCurrentUserAccount] = useState({});
 	const [user, setUser] = useState({
 		users: [
 			{
@@ -27,35 +26,41 @@ export default function Spa() {
 				type: "personal",
 				accounts: {
 					checking: {
+						title: "checking",
 						balance: 0,
 						transactions: [
 							{
 								type: "deposit",
 								date: "3/27/2022",
 								amount: 1,
+								account: "checking",
 								transactionId: "blakebeckstrom-checking-001",
 							},
 							{
 								type: "withdraw",
 								date: "3/28/2022",
 								amount: 1,
+								account: "checking",
 								transactionId: "blakebeckstrom-checking-002",
 							},
 						],
 					},
 					savings: {
+						title: "savings",
 						balance: 0,
 						transactions: [
 							{
 								type: "deposit",
 								date: "3/27/2022",
 								amount: 1,
+								account: "savings",
 								transactionId: "blakebeckstrom-savings-001",
 							},
 							{
 								type: "withdraw",
 								date: "3/28/2022",
 								amount: 1,
+								account: "savings",
 								transactionId: "blakebeckstrom-savings-002",
 							},
 						],
@@ -76,8 +81,6 @@ export default function Spa() {
 					setCurrentUser,
 					currentUserIndex,
 					setCurrentUserIndex,
-					currentUserAccount,
-					setCurrentUserAccount,
 				}}>
 				<Nav />
 				<Routes>

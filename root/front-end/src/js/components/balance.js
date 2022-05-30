@@ -1,8 +1,7 @@
 import { React, useContext, Link, UserContext } from "../context";
 
 export default function Balance() {
-	const { currentUser, loggedIn, currentUserAccount, setCurrentUserAccount } =
-		useContext(UserContext);
+	const { currentUser, loggedIn } = useContext(UserContext);
 
 	let balance =
 		currentUser.accounts.checking.balance +
@@ -12,10 +11,18 @@ export default function Balance() {
 	let savingsTransactions = currentUser.accounts.savings.transactions;
 	let transactions = checkingTransactions.concat(savingsTransactions);
 
-	console.log(transactions);
+	let sortedTransactions = [];
+	for (let i = 0; i < transactions.length; i++) {
+		for (var j = 0; j < i; j++)
+			if (transactions[i].date < transactions[j].date) {
+				var x = transactions[i];
+				transactions[i] = transactions[j];
+				transactions[j] = x;
+			}
+	}
+	console.log("sorted transactions:", sortedTransactions);
 
 	function Transactions({ data }) {
-		console.log(data.date, data.amount);
 		return (
 			<div className="account-transaction">
 				<h4 className="user-data-item data-first-name">
@@ -35,9 +42,6 @@ export default function Balance() {
 		<div>
 			<div className="page-container">
 				<div className="account-container">
-					<h1 className="account-type">
-						Current Account: {currentUserAccount.title}
-					</h1>
 					<h1 className="account-welcome">
 						Hi, {currentUser.firstName}. Here are your account details.
 					</h1>

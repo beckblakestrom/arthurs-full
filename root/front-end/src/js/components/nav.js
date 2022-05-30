@@ -77,11 +77,13 @@ export default function Nav() {
 					<Link
 						to="/"
 						onClick={() => {
-							setLoggedIn(false);
-							document
-								.getElementById("login-dropdown")
-								.classList.remove("drop");
-							document.getElementById("down-arrow").classList.remove("drop");
+							setTimeout(() => {
+								setLoggedIn(false);
+								document
+									.getElementById("login-dropdown")
+									.classList.remove("drop");
+								document.getElementById("down-arrow").classList.remove("drop");
+							}, 1);
 						}}
 						className="nav__link">
 						Logout

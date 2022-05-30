@@ -58,7 +58,7 @@ export default function Withdraw() {
 		if (withdraw > balance) {
 			alert("Insufficient Funds");
 		} else {
-			let newTotal = balance - withdraw;
+			let newTotal = currentAccount.balance - withdraw;
 			// change totalState to above newTotal
 			setTotalState(newTotal);
 

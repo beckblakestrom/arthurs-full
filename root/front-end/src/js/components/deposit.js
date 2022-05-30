@@ -55,7 +55,18 @@ export default function Deposit() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		let newTotal = balance + deposit;
+		console.log("before total balance:", balance);
+		console.log(
+			"before checking balance:",
+			currentUser.accounts.checking.balance
+		);
+		console.log(
+			"before savings balance:",
+			currentUser.accounts.savings.balance
+		);
+
+		let newTotal = currentAccount.balance + deposit;
+		console.log("new total:", newTotal);
 		// change totalState to above newTotal
 		setTotalState(newTotal);
 
@@ -81,8 +92,6 @@ export default function Deposit() {
 			timestamp: +new Date(),
 		};
 
-		console.log(tempTransaction.timestamp);
-
 		// push transaction into users
 		if (currentAccount.title === "checking") {
 			tempUser.accounts.checking.transactions.push(tempTransaction);
@@ -102,6 +111,13 @@ export default function Deposit() {
 
 		setUser(tempState);
 		clearDeposit();
+
+		console.log("after total balance:", balance);
+		console.log(
+			"after checking balance:",
+			currentUser.accounts.checking.balance
+		);
+		console.log("after savings balance:", currentUser.accounts.savings.balance);
 	};
 
 	// html returned

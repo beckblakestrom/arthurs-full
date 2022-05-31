@@ -6,10 +6,6 @@ router.get("/", function (req, res, next) {
 	res.send("respond with a resource");
 });
 
-router.get("/fun", function (req, res, next) {
-	res.send("fin");
-});
-
 router.get("/login/:email/:password", function (req, res) {
 	res.send({
 		email: req.params.email,

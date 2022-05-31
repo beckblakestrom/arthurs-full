@@ -1,7 +1,4 @@
-# arthurs
-
-# Project Title:
-Arthurs Financial - Full-Stack Banking
+# Arthurs Financial - Full-Stack Banking Application
 # Description: 
 Portfolio project for MIT's Certifcate in Coding - MERN Stack Development
 # Installation Guidelines:

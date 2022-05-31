@@ -1,6 +1,7 @@
 import { React, useContext, UserContext, Link } from "../context";
 import Login from "./login";
 import DataDisplay from "./data";
+import { FetchData } from "./data";
 
 export default function Nav() {
 	const { loggedIn, setLoggedIn } = useContext(UserContext);
@@ -24,6 +25,7 @@ export default function Nav() {
 					<Link className="nav__link" to="/about/">
 						About
 					</Link>
+					<FetchData />
 				</div>
 			</div>
 			<div className="data__container">

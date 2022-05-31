@@ -1,6 +1,27 @@
-import React from "react";
-import { useContext } from "react";
-import { UserContext } from "../context";
+import {
+	React,
+	useContext,
+	UserContext,
+	useEffect,
+	useState,
+} from "../context";
+
+export function FetchData() {
+	const [data, setData] = useState({});
+
+	useEffect(() => {
+		fetch("http://localhost:9000/balance")
+			.then((res) => res.json())
+			.then((data) => setData(data));
+	}, []);
+
+	return (
+		<div>
+			<h1>{data.name}</h1>
+			<h1>{data.age}</h1>
+		</div>
+	);
+}
 
 function UserData({ data }) {
 	let balance = data.accounts.checking.balance + data.accounts.savings.balance;

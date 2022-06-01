@@ -55,7 +55,7 @@ export default function Withdraw() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		if (withdraw > balance) {
+		if (withdraw > currentAccount.balance) {
 			alert("Insufficient Funds");
 		} else {
 			let newTotal = currentAccount.balance - withdraw;
